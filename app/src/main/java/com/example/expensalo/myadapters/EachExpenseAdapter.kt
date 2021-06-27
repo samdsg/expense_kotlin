@@ -10,6 +10,7 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.expensalo.R
+import com.example.expensalo.models.EachExpense
 import com.example.expensalo.models.EachExpenseTime
 import kotlinx.android.synthetic.main.each__expenses.view.*
 
@@ -24,8 +25,6 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
         private val eTotal: TextView = view.e__total;
         private val eDate: TextView = view.e__date;
 
-        private val eachList: RecyclerView = view.each__lists;
-
         fun bind(eachExpense: EachExpenseTime) {
             eDate.text = eachExpense.time;
             eTotal.text = "Total of expense";
@@ -37,14 +36,13 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.each__expenses, parent, false)
 
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView);
     }
 
     @SuppressLint("WrongConstant")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val expenseWithTime = aList[position];
         val recyclerView: RecyclerView = holder.itemView.each__lists;
-        var adapter = ChildAdapter(aList[position].expense);
+        var adapter = aList[position].expense?.let { ChildAdapter(it) };
 
         var layoutManager =
             LinearLayoutManager(holder.itemView.context, LinearLayout.VERTICAL, false)

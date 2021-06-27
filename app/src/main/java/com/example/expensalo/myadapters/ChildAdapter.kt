@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.expensalo.R
 import com.example.expensalo.models.EachExpense
 
-class ChildAdapter(private val expenses: EachExpense) :
+class ChildAdapter(private val expenses: Any) :
     RecyclerView.Adapter<ChildAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -16,7 +16,7 @@ class ChildAdapter(private val expenses: EachExpense) :
     ): ViewHolder {
 
         val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.each__expenses, parent, false)
+            .inflate(R.layout.each__expense, parent, false)
         return ViewHolder(v)
     }
 

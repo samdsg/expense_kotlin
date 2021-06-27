@@ -36,15 +36,15 @@ class MainActivity : AppCompatActivity() {
         statsInfo.adapter = StatsAdapter(this, DataSource.expenseStats());
 
         val aList = ArrayList<EachExpenseTime>();
-        aList.add(EachExpenseTime("time", EachExpense("", "Coffee", "- 4.50")));
-        aList.add(EachExpenseTime("time", EachExpense("", "Suit for meeting", "- 4.50")));
-        aList.add(EachExpenseTime("time", EachExpense("", "Suit for meeting", "- 4.50")));
-        aList.add(EachExpenseTime("time", EachExpense("", "Suit for meeting", "- 4.50")));
-        aList.add(EachExpenseTime("time", EachExpense("", "Suit for meeting", "- 4.50")));
+//        aList.add(EachExpenseTime("time", EachExpense("", "Coffee", "- 4.50")));
+        aList.add(EachExpenseTime("time", arrayListOf(EachExpense("", "1", "e1"))));
+        aList.add(EachExpenseTime("time", arrayListOf(EachExpense("", "2", "e2"))));
+        aList.add(EachExpenseTime("time", arrayListOf(EachExpense("", "3", "e3"))));
+        aList.add(EachExpenseTime("time", arrayListOf(EachExpense("", "4", "e4"))));
 
         /* Recycler View */
         rcycle.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(this@MainActivity);
             statsAdapter = EachExpenseAdapter(aList);
             adapter = statsAdapter;
         }
