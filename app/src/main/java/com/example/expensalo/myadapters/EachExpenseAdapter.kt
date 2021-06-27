@@ -44,13 +44,17 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val expenseWithTime = aList[position];
         val recyclerView: RecyclerView = holder.itemView.each__lists;
-        val adapter = ChildAdapter(aList[]);
+        var adapter = ChildAdapter(aList[position].expense);
+
+        val layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayout.HORIZONTAL, false)
 
         when (holder) {
 
             is MyViewHolder -> {
                 holder.bind(aList[position]);
-
+                apply {
+                    adapter = adapter;
+                }
             }
         }
     }

@@ -3,13 +3,11 @@ package com.example.expensalo.myadapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.expensalo.R
 import com.example.expensalo.models.EachExpense
 
-class ChildAdapter(private val children: List<EachExpense>) :
+class ChildAdapter(private val children: EachExpense) :
     RecyclerView.Adapter<ChildAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
