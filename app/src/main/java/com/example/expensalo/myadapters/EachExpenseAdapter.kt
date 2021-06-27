@@ -52,12 +52,11 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
 
             is MyViewHolder -> {
                 holder.bind(aList[position]);
-                apply {
-                    adapter = adapter;
+                recyclerView.adapter = adapter;
+                layoutManager = layoutManager;
                 }
             }
         }
-    }
 
     override fun getItemCount(): Int {
         return aList.size;
