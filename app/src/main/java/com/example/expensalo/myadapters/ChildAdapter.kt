@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.expensalo.R
 import com.example.expensalo.models.EachExpense
 
-class ChildAdapter(private val children: EachExpense) :
+class ChildAdapter(private val expenses: EachExpense) :
     RecyclerView.Adapter<ChildAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -21,14 +21,13 @@ class ChildAdapter(private val children: EachExpense) :
     }
 
     override fun getItemCount(): Int {
-        return children.size
+        return 4;
     }
 
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
     ) {
-        val child = children[position]
 //        holder.imageView.setImageResource(child.image)
 //        holder.textView.text = child.title
     }

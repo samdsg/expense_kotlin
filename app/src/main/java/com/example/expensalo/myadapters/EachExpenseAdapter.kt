@@ -46,17 +46,17 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
         val recyclerView: RecyclerView = holder.itemView.each__lists;
         var adapter = ChildAdapter(aList[position].expense);
 
-        val layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayout.HORIZONTAL, false)
+        var layoutManager =
+            LinearLayoutManager(holder.itemView.context, LinearLayout.VERTICAL, false)
 
         when (holder) {
-
             is MyViewHolder -> {
                 holder.bind(aList[position]);
                 recyclerView.adapter = adapter;
-                layoutManager = layoutManager;
-                }
+                recyclerView.layoutManager = layoutManager;
             }
         }
+    }
 
     override fun getItemCount(): Int {
         return aList.size;
