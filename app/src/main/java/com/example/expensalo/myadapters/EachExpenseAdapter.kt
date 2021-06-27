@@ -24,6 +24,8 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
         private val eTotal: TextView = view.e__total;
         private val eDate: TextView = view.e__date;
 
+        private val eachList: RecyclerView = view.each__lists;
+
         fun bind(eachExpense: EachExpenseTime) {
             eDate.text = eachExpense.time;
             eTotal.text = "Total of expense";
@@ -41,18 +43,14 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
     @SuppressLint("WrongConstant")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val expenseWithTime = aList[position];
+        val recyclerView: RecyclerView = holder.itemView.each__lists;
+        val adapter = ChildAdapter(aList[]);
 
         when (holder) {
 
             is MyViewHolder -> {
                 holder.bind(aList[position]);
 
-                holder.apply {
-                    val layoutManager =
-                        LinearLayoutManager(holder.itemView.context, LinearLayout.HORIZONTAL, false);
-
-//                    this child adapter shows me an error
-                }
             }
         }
     }
