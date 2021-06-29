@@ -41,8 +41,8 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
 
     @SuppressLint("WrongConstant")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val recyclerView: RecyclerView = holder.itemView.each__lists;
-        var adapter = aList[position].expense?.let { ChildAdapter(it) };
+//        val recyclerView: RecyclerView = holder.itemView.each__lists;
+//        var adapter = aList[position].expense?.let { ChildAdapter(it) };
 
         var layoutManager =
             LinearLayoutManager(holder.itemView.context, LinearLayout.VERTICAL, false)
@@ -50,8 +50,8 @@ internal class EachExpenseAdapter(private var aList: ArrayList<EachExpenseTime>)
         when (holder) {
             is MyViewHolder -> {
                 holder.bind(aList[position]);
-                recyclerView.adapter = adapter;
-                recyclerView.layoutManager = layoutManager;
+//                recyclerView.adapter = adapter;
+//                recyclerView.layoutManager = layoutManager;
             }
         }
     }
